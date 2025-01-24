@@ -54,6 +54,7 @@ class listener implements EventSubscriberInterface {
 	static public function getSubscribedEvents() {
 
 		return [
+			'core.user_setup'							=> 'add_template_vars',
 			'core.user_setup_after'						=> 'add_languages',
 			'core.modify_username_string'				=> 'update_username_string',
 			'core.acp_manage_group_display_form'		=> 'add_group_settings',
@@ -64,7 +65,18 @@ class listener implements EventSubscriberInterface {
 	}
 
 	/**
-	 * Add Languages
+	 * phpbb/user
+	 */
+	public function add_template_vars( $event ) {
+
+		$this->template->assign_vars( [
+			'UG_USERNAME_COLOUR' => ( '' !== $event[ 'user_data' ][ 'user_colour' ] ) ? $event[ 'user_data' ][ 'user_colour' ] : false
+		] );
+
+	}
+
+	/**
+	 * phpbb/user
 	 */
 	public function add_languages() {
 
