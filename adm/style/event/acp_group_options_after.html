@@ -1,0 +1,34 @@
+<dl>
+	<dt>
+		<label for="group_gradient_dir">{{ lang( 'ACP_GROUP_GRADIENT_DIRECTION_LABEL' ) }}</label>
+		<br /><span>{{ lang( 'ACP_GROUP_GRADIENT_DIRECTION_DESCRIPTION' ) }}</span>
+	</dt>
+	<dd>
+		<select name="group_gradient_dir" id="group_gradient_dir">
+			<option value="t"{{ ( 't' === GROUP_GRADIENT_DIRECTION ) ? ' selected="selected"' : '' }}>{{ lang( 'ACP_GROUP_GRADIENT_DIRECTION_VALUE_TOP' ) }}</option>
+			<option value="r"{{ ( 'r' === GROUP_GRADIENT_DIRECTION ) ? ' selected="selected"' : '' }}>{{ lang( 'ACP_GROUP_GRADIENT_DIRECTION_VALUE_RIGHT' ) }}</option>
+			<option value="b"{{ ( 'b' === GROUP_GRADIENT_DIRECTION ) ? ' selected="selected"' : '' }}>{{ lang( 'ACP_GROUP_GRADIENT_DIRECTION_VALUE_BOTTOM' ) }}</option>
+			<option value="l"{{ ( 'l' === GROUP_GRADIENT_DIRECTION ) ? ' selected="selected"' : '' }}>{{ lang( 'ACP_GROUP_GRADIENT_DIRECTION_VALUE_LEFT' ) }}</option>
+		</select>
+	</dd>
+</dl>
+
+<dl>
+	<dt>
+		<label for="group_gradient_1">{{ lang( 'ACP_GROUP_GRADIENT_ONE_LABEL' ) }}</label>
+		<br /><span>{{ lang( 'ACP_GROUP_GRADIENT_ONE_DESCRIPTION' ) }}</span>
+	</dt>
+	<dd>
+		<input type="text" name="group_gradient_1" id="group_gradient_1" size="6" maxlength="6" value="{{ GROUP_GRADIENT_COLOUR_ONE }}" />
+	</dd>
+</dl>
+
+<dl>
+	<dt>
+		<label for="group_gradient_2">{{ lang( 'ACP_GROUP_GRADIENT_TWO_LABEL' ) }}</label>
+		<br /><span>{{ lang( 'ACP_GROUP_GRADIENT_TWO_DESCRIPTION' ) }}</span>
+	</dt>
+	<dd>
+		<input type="text" name="group_gradient_2" id="group_gradient_2" size="6" maxlength="6" value="{{ GROUP_GRADIENT_COLOUR_TWO }}" />
+	</dd>
+</dl>

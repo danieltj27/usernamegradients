@@ -1,0 +1,15 @@
+services:
+    danieltj.usernamegradients.listener:
+        class: danieltj\usernamegradients\event\listener
+        arguments:
+            - '@request'
+            - '@template'
+            - '@language'
+            - '@danieltj.usernamegradients.includes.functions'
+        tags:
+            - { name: event.listener }
+
+    danieltj.usernamegradients.includes.functions:
+        class: danieltj\usernamegradients\includes\functions
+        arguments:
+            - '@dbal.conn'
