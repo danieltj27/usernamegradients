@@ -28,19 +28,17 @@ final class functions {
 	}
 
 	/**
-	 * @todo
+	 * Fetches the default group ID of the given user.
 	 * 
 	 * @since 1.0.0
 	 * 
-	 * @param  integer $user_id  
-	 * @return integer $group_id 
+	 * @param  integer $user_id  The user ID used to search for user data.
+	 * @return integer $group_id The default group ID of the given user.
 	 */
 	public function get_group_id_by_user_id( $user_id ) {
 
-		$user_id = (int) $user_id;
-
 		$sql = 'SELECT * FROM ' . USERS_TABLE . ' WHERE ' . $this->database->sql_build_array( 'SELECT', [
-			'user_id' => $user_id
+			'user_id' => (int) $user_id
 		] );
 
 		$result = $this->database->sql_query( $sql );
@@ -58,7 +56,7 @@ final class functions {
 	}
 
 	/**
-	 * @todo
+	 * Fetches the group gradient data for the given group.
 	 * 
 	 * @since 1.0.0
 	 * 
